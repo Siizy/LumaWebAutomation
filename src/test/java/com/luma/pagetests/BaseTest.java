@@ -60,7 +60,7 @@ public class BaseTest {
 
 		default:
 			System.out.println("No driver found");
-			ReportUtils.log.fail("No Browser was launched");
+			ReportUtils.log.fail("No Browser was launched ! Test Failed");
 			break;
 		}
 
