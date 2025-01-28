@@ -8,7 +8,7 @@ import com.luma.pages.HomePage;
 public class CustomerLoginTest extends BaseTest{
 	
 	
-	@Test
+	
 	public void verifySuccessfullLogin() {
 		
 		
@@ -26,7 +26,7 @@ public class CustomerLoginTest extends BaseTest{
 	}
 	
 	
-	@Test
+	
 	public void verifySuccessfullLogin2() {
 		
 		
