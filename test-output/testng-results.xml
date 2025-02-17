@@ -1,68 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="3" passed="0" failed="2" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-01-20T19:51:43 GMT-05:00" name="Default suite" finished-at="2025-01-20T19:52:37 GMT-05:00" duration-ms="54429">
+  <suite started-at="2025-02-17T02:31:56 GMT-05:00" name="Suite" finished-at="2025-02-17T02:32:04 GMT-05:00" duration-ms="7857">
     <groups>
     </groups>
-    <test started-at="2025-01-20T19:51:43 GMT-05:00" name="Default test" finished-at="2025-01-20T19:52:37 GMT-05:00" duration-ms="54429">
-      <class name="com.luma.pagetests.CustomerLoginTest">
-        <test-method is-config="true" signature="init()[pri:0, instance:com.luma.pagetests.CustomerLoginTest@5ab956d7]" started-at="2025-01-20T19:51:42 GMT-05:00" name="init" finished-at="2025-01-20T19:51:43 GMT-05:00" duration-ms="315" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- init -->
-        <test-method is-config="true" signature="launchSite(java.lang.reflect.Method)[pri:0, instance:com.luma.pagetests.CustomerLoginTest@5ab956d7]" started-at="2025-01-20T19:51:43 GMT-05:00" name="launchSite" finished-at="2025-01-20T19:51:48 GMT-05:00" duration-ms="4939" status="PASS">
+    <test started-at="2025-02-17T02:31:56 GMT-05:00" name="Test" finished-at="2025-02-17T02:32:04 GMT-05:00" duration-ms="7857">
+      <class name="com.luma.pagetests.CreateNewCustomerAccountTest">
+        <test-method is-config="true" signature="setUp(java.lang.reflect.Method)[pri:0, instance:com.luma.pagetests.CreateNewCustomerAccountTest@740cae06]" started-at="2025-02-17T02:31:56 GMT-05:00" name="setUp" finished-at="2025-02-17T02:32:01 GMT-05:00" duration-ms="5443" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.luma.pagetests.CustomerLoginTest.verifySuccessfullLogin()]]>
+                <![CDATA[public void com.luma.pagetests.CreateNewCustomerAccountTest.verifySuccessfullLogin3()]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- launchSite -->
-        <test-method signature="verifySuccessfullLogin()[pri:0, instance:com.luma.pagetests.CustomerLoginTest@5ab956d7]" started-at="2025-01-20T19:51:48 GMT-05:00" name="verifySuccessfullLogin" finished-at="2025-01-20T19:52:37 GMT-05:00" duration-ms="48937" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        </test-method> <!-- setUp -->
+        <test-method signature="verifySuccessfullLogin3()[pri:0, instance:com.luma.pagetests.CreateNewCustomerAccountTest@740cae06]" started-at="2025-02-17T02:32:01 GMT-05:00" name="verifySuccessfullLogin3" finished-at="2025-02-17T02:32:03 GMT-05:00" duration-ms="2112" status="FAIL">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='login-container']//span[text()='Sign In']"}
-  (Session info: chrome=131.0.6778.265)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.27.0', revision: 'd6e718d134'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [2312113b1a5f227a40e3d81d5ef976c0, findElement {value=//div[@class='login-container']//span[text()='Sign In'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\mamta\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54850}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54850/devtoo..., se:cdpVersion: 131.0.6778.265, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 2312113b1a5f227a40e3d81d5ef976c0]]>
+              <![CDATA[expected [Home Page] but found [Customer Login]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='login-container']//span[text()='Sign In']"}
-  (Session info: chrome=131.0.6778.265)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.27.0', revision: 'd6e718d134'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [2312113b1a5f227a40e3d81d5ef976c0, findElement {value=//div[@class='login-container']//span[text()='Sign In'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\mamta\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54850}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54850/devtoo..., se:cdpVersion: 131.0.6778.265, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 2312113b1a5f227a40e3d81d5ef976c0
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
-at com.luma.pages.CustomerLoginPage.clickSignIn(CustomerLoginPage.java:37)
-at com.luma.pagetests.CustomerLoginTest.verifySuccessfullLogin(CustomerLoginTest.java:24)
+              <![CDATA[java.lang.AssertionError: expected [Home Page] but found [Customer Login]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+at org.testng.Assert.assertEquals(Assert.java:132)
+at org.testng.Assert.assertEquals(Assert.java:656)
+at org.testng.Assert.assertEquals(Assert.java:666)
+at com.luma.pagetests.CreateNewCustomerAccountTest.verifySuccessfullLogin3(CreateNewCustomerAccountTest.java:30)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -75,44 +44,192 @@ at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInv
 at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
 at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
 at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:819)
-at org.testng.TestRunner.run(TestRunner.java:619)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
-at org.testng.TestNG.runSuites(TestNG.java:1134)
-at org.testng.TestNG.run(TestNG.java:1101)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:833)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifySuccessfullLogin -->
-        <test-method is-config="true" signature="end(org.testng.ITestResult)[pri:0, instance:com.luma.pagetests.CustomerLoginTest@5ab956d7]" started-at="2025-01-20T19:52:37 GMT-05:00" name="end" finished-at="2025-01-20T19:52:37 GMT-05:00" duration-ms="519" status="PASS">
+        </test-method> <!-- verifySuccessfullLogin3 -->
+        <test-method is-config="true" signature="end(org.testng.ITestResult)[pri:0, instance:com.luma.pagetests.CreateNewCustomerAccountTest@740cae06]" started-at="2025-02-17T02:32:03 GMT-05:00" name="end" finished-at="2025-02-17T02:32:04 GMT-05:00" duration-ms="273" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifySuccessfullLogin status=FAILURE method=CustomerLoginTest.verifySuccessfullLogin()[pri:0, instance:com.luma.pagetests.CustomerLoginTest@5ab956d7] output={null}]]]>
+                <![CDATA[[TestResult name=verifySuccessfullLogin3 status=FAILURE method=CreateNewCustomerAccountTest.verifySuccessfullLogin3()[pri:0, instance:com.luma.pagetests.CreateNewCustomerAccountTest@740cae06] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- end -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.luma.pagetests.CustomerLoginTest@5ab956d7]" started-at="2025-01-20T19:52:37 GMT-05:00" name="tearDown" finished-at="2025-01-20T19:52:38 GMT-05:00" duration-ms="377" status="PASS">
+      </class> <!-- com.luma.pagetests.CreateNewCustomerAccountTest -->
+      <class name="com.luma.pagetests.CustomerLoginTest">
+        <test-method is-config="true" signature="init()[pri:0, instance:com.luma.pagetests.CustomerLoginTest@3646a422]" started-at="2025-02-17T02:31:56 GMT-05:00" name="init" finished-at="2025-02-17T02:31:56 GMT-05:00" duration-ms="214" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method is-config="true" signature="setUp(java.lang.reflect.Method)[pri:0, instance:com.luma.pagetests.CustomerLoginTest@3646a422]" started-at="2025-02-17T02:31:56 GMT-05:00" name="setUp" finished-at="2025-02-17T02:32:01 GMT-05:00" duration-ms="5161" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.luma.pagetests.CustomerLoginTest.verifySuccessfullLogin()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp(java.lang.reflect.Method)[pri:0, instance:com.luma.pagetests.CustomerLoginTest@3646a422]" started-at="2025-02-17T02:31:56 GMT-05:00" name="setUp" finished-at="2025-02-17T02:31:56 GMT-05:00" duration-ms="429" status="SKIP">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.luma.pagetests.CustomerLoginTest.verifySuccessfullLogin2()]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.testng.SkipException">
+            <message>
+              <![CDATA[No Data is available for this testcase : verifySuccessfullLogin2]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.SkipException: No Data is available for this testcase : verifySuccessfullLogin2
+at com.luma.pagetests.BaseTest.getDataMap(BaseTest.java:118)
+at com.luma.pagetests.BaseTest.setUp(BaseTest.java:41)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:393)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:326)
+at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:810)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:578)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:833)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.SkipException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifySuccessfullLogin2()[pri:0, instance:com.luma.pagetests.CustomerLoginTest@3646a422]" started-at="2025-02-17T02:31:56 GMT-05:00" name="verifySuccessfullLogin2" finished-at="2025-02-17T02:31:56 GMT-05:00" duration-ms="0" status="SKIP">
+          <exception class="org.testng.SkipException">
+            <message>
+              <![CDATA[No Data is available for this testcase : verifySuccessfullLogin2]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.SkipException: No Data is available for this testcase : verifySuccessfullLogin2
+at com.luma.pagetests.BaseTest.getDataMap(BaseTest.java:118)
+at com.luma.pagetests.BaseTest.setUp(BaseTest.java:41)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:393)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:326)
+at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:810)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:578)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:833)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.SkipException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySuccessfullLogin2 -->
+        <test-method is-config="true" signature="end(org.testng.ITestResult)[pri:0, instance:com.luma.pagetests.CustomerLoginTest@3646a422]" started-at="2025-02-17T02:31:56 GMT-05:00" name="end" finished-at="2025-02-17T02:31:56 GMT-05:00" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifySuccessfullLogin2 status=SKIP method=CustomerLoginTest.verifySuccessfullLogin2()[pri:0, instance:com.luma.pagetests.CustomerLoginTest@3646a422] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- end -->
+        <test-method signature="verifySuccessfullLogin()[pri:0, instance:com.luma.pagetests.CustomerLoginTest@3646a422]" started-at="2025-02-17T02:32:01 GMT-05:00" name="verifySuccessfullLogin" finished-at="2025-02-17T02:32:03 GMT-05:00" duration-ms="2156" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [Home Page] but found [Customer Login]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [Home Page] but found [Customer Login]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+at org.testng.Assert.assertEquals(Assert.java:132)
+at org.testng.Assert.assertEquals(Assert.java:656)
+at org.testng.Assert.assertEquals(Assert.java:666)
+at com.luma.pagetests.CustomerLoginTest.verifySuccessfullLogin(CustomerLoginTest.java:30)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:833)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySuccessfullLogin -->
+        <test-method is-config="true" signature="end(org.testng.ITestResult)[pri:0, instance:com.luma.pagetests.CustomerLoginTest@3646a422]" started-at="2025-02-17T02:32:03 GMT-05:00" name="end" finished-at="2025-02-17T02:32:03 GMT-05:00" duration-ms="324" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifySuccessfullLogin status=FAILURE method=CustomerLoginTest.verifySuccessfullLogin()[pri:0, instance:com.luma.pagetests.CustomerLoginTest@3646a422] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- end -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.luma.pagetests.CustomerLoginTest@3646a422]" started-at="2025-02-17T02:32:04 GMT-05:00" name="tearDown" finished-at="2025-02-17T02:32:04 GMT-05:00" duration-ms="314" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.luma.pagetests.CustomerLoginTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

@@ -16,12 +16,12 @@ public class HomePage extends BasePage {
 	
 	public void clickSignin() {
 		driver.findElement(singInLink).click();
-		ReportUtils.log.info("Clicked Sign In");
+		ReportUtils.getLog().info("Clicked Sign In");
 	}
 	
 	public void clickShopNewYoga() {
 		driver.findElement(shopNewYogaLink).click();
-        ReportUtils.log.info("Clicked Shop New Yoga link");
+        ReportUtils.getLog().info("Clicked Shop New Yoga link");
 	}
 
 }

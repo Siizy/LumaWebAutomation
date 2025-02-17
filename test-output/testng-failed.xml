@@ -1,17 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Default test(failed)">
+<suite configfailurepolicy="continue" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" parallel="methods" name="Test(failed)">
     <classes>
       <class name="com.luma.pagetests.CustomerLoginTest">
         <methods>
+          <include name="verifySuccessfullLogin2"/>
           <include name="init"/>
           <include name="end"/>
           <include name="verifySuccessfullLogin"/>
-          <include name="launchSite"/>
+          <include name="setUp"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- com.luma.pagetests.CustomerLoginTest -->
+      <class name="com.luma.pagetests.CreateNewCustomerAccountTest">
+        <methods>
+          <include name="verifySuccessfullLogin3"/>
+          <include name="init"/>
+          <include name="end"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.luma.pagetests.CreateNewCustomerAccountTest -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

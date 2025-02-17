@@ -2,93 +2,131 @@ package com.luma.pagetests;
 
 import java.io.IOException;
 import java.lang.reflect.Method;
+import java.sql.SQLException;
 import java.time.Duration;
+import java.util.HashMap;
+import java.util.Map;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.testng.ITestResult;
+import org.testng.SkipException;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+
 import com.aventstack.extentreports.MediaEntityBuilder;
 
+import manager.DriverManager;
 import utils.BaseUtils;
+import utils.DBUtils;
 import utils.ReportUtils;
+import utils.TestDataHolder;
 
 public class BaseTest {
 
-	protected WebDriver driver;
-	
-	
 	@BeforeSuite
-	public void init() {
+	public void init() throws SQLException {
+
 		ReportUtils.initReport();
 	}
 
 	@BeforeMethod
-	protected void launchSite(Method method) throws InterruptedException, IOException {
-		
+	protected void setUp(Method method) throws InterruptedException, IOException, SQLException {
+		DBUtils.establishConnection();
+		TestDataHolder.setTestData(getDataMap(method));
 		ReportUtils.createTest(method.getName());
-
 		String browser = BaseUtils.getConfigValue("browser");
 
 		switch (browser.toLowerCase()) {
 
 		case "chrome":
-			driver = new ChromeDriver();
-			ReportUtils.log.info("Browser launched : Chrome");
+
+			DriverManager.setDriver(new ChromeDriver());
+			ReportUtils.getLog().info("Browser launched : Chrome");
 			break;
 
 		case "firefox":
-			driver = new FirefoxDriver();
-			ReportUtils.log.info("Browser launched : Firefox");
+
+			DriverManager.setDriver(new FirefoxDriver());
+			ReportUtils.getLog().info("Browser launched : Firefox");
 			break;
 
 		case "safari":
-			driver = new SafariDriver();
-			ReportUtils.log.info("Browser launched : Safari");
+
+			DriverManager.setDriver(new SafariDriver());
+			ReportUtils.getLog().info("Browser launched : Safari");
 			break;
 
 		case "edge":
-			driver = new EdgeDriver();
-			ReportUtils.log.info("Browser launched : Edge");
+
+			DriverManager.setDriver(new EdgeDriver());
+			ReportUtils.getLog().info("Browser launched : Edge");
 			break;
 
 		default:
 			System.out.println("No driver found");
-			ReportUtils.log.fail("No Browser was launched ! Test Failed");
+			ReportUtils.getLog().fail("No Browser was launched ! Test Failed");
 			break;
 		}
 
-		driver.manage().timeouts()
+		DriverManager.getDriver().manage().timeouts()
 				.implicitlyWait(Duration.ofSeconds(Integer.valueOf(BaseUtils.getConfigValue("implicitwait"))));
-		
+
 		String url = BaseUtils.getConfigValue("url");
-		driver.get(url);
-		ReportUtils.log.info("Url Launched : " + url);
+		DriverManager.getDriver().get(url);
+		ReportUtils.getLog().info("Url Launched : " + url);
 
 	}
 
 	@AfterMethod
-	protected void end(ITestResult result) throws IOException {
+	protected void end(ITestResult result) throws IOException, SQLException {
 
 		if (result.getStatus() == ITestResult.FAILURE) {
-			ReportUtils.log.fail(result.getThrowable(),
-					MediaEntityBuilder.createScreenCaptureFromPath(BaseUtils.getScreenShotPath(driver,
+			ReportUtils.getLog().fail(result.getThrowable(), MediaEntityBuilder
+					.createScreenCaptureFromPath(BaseUtils.getScreenShotPath(DriverManager.getDriver(),
 							result.getInstance().getClass().getSimpleName() + "." + result.getMethod().getMethodName()))
-							.build());
+					.build());
 		}
 
-		driver.quit();
-		ReportUtils.log.info("Browser Closed ! Hurray !!");
+		DriverManager.quitDriver();
+		ReportUtils.removeTest();
+		TestDataHolder.clear();
+		DBUtils.closeConnection();
+
 	}
-	
+
 	@AfterSuite
-	protected void tearDown() {
+	protected void tearDown() throws SQLException {
+
 		ReportUtils.generateReport();
+	}
+
+	public synchronized Map<String, String> getDataMap(Method method) throws SQLException {
+
+		String testCases = DBUtils.getTestDataForMethod(method.getName());
+
+		if (testCases == null || testCases.isEmpty()) {
+			throw new SkipException("No Data is available for this testcase : " + method.getName());
+		}
+
+		String[] keyValuePairs = testCases.split("\\|");
+
+		Map<String, String> testDataMap = new HashMap<>();
+
+		for (String pair : keyValuePairs) {
+			String[] entry = pair.split(":");
+
+			if (entry.length == 2 && !entry[0].trim().isEmpty() && !entry[1].trim().isEmpty()) {
+				testDataMap.put(entry[0].trim(), entry[1].trim());
+			} else {
+				throw new SkipException("Invalid test data format. Expected 'key:value', but found: " + pair);
+			}
+		}
+
+		return testDataMap;
 	}
 }

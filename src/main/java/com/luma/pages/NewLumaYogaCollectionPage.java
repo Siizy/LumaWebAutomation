@@ -27,7 +27,7 @@ public class NewLumaYogaCollectionPage extends BasePage {
 		//this.color = color;
 		driver.findElement(colorFilterDropDown).click();
 		driver.findElement(blueColorFilter).click();
-		ReportUtils.log.info("Expanded Color Filter from the left panel and select Blue");
+		ReportUtils.getLog().info("Expanded Color Filter from the left panel and select Blue");
 	}
 
 	public boolean isAllSelectedItemColorBlue(String color) {
@@ -39,11 +39,11 @@ public class NewLumaYogaCollectionPage extends BasePage {
 			String colour = ele.getDomAttribute("option-label");
 
 			if (!colour.equals("Blue")) {
-				ReportUtils.log.info("All the listed items are not blue");
+				ReportUtils.getLog().info("All the listed items are not blue");
 				return false;
 			}
 		}
-		ReportUtils.log.info("All the listed items are Blue");
+		ReportUtils.getLog().info("All the listed items are Blue");
 
 		return true;
 	}

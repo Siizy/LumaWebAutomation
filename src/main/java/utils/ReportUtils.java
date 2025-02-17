@@ -11,7 +11,10 @@ public class ReportUtils {
 	
 	public static ExtentSparkReporter spark;
 	public static ExtentReports extent;
-	public static ExtentTest log;
+	
+	//public static ExtentTest log;
+	
+	private static final ThreadLocal<ExtentTest> log = new ThreadLocal<ExtentTest>();
 	
 	public static ExtentReports initReport() {
 		
@@ -33,9 +36,20 @@ public class ReportUtils {
     	extent.flush();
 	}
     
-    public static void createTest(String methodName) {
-    	log = extent.createTest(methodName);
+    public static void createTest(String methodName) {    	
+    	log.set(extent.createTest(methodName));
     }
+    
+    public static ExtentTest getLog() {
+    	return log.get();
+    }
+    
+    public static void removeTest() {
+    	if(log.get() != null) {
+    	 log.remove();
+    	 }
+    }
+
 
 
 }

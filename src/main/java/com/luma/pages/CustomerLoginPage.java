@@ -22,7 +22,7 @@ public class CustomerLoginPage extends BasePage{
 	public void enterUsername(String username) {
 		
 		driver.findElement(emailText).sendKeys(username);
-		ReportUtils.log.info("Enter UserName : " + username);		
+		ReportUtils.getLog().info("Enter UserName : " + username);		
 	}
 	
 	public void clearAndenterUsername(String username) {
@@ -31,17 +31,19 @@ public class CustomerLoginPage extends BasePage{
 	}
 	
 	public void enterPassword(String password) {		
-		driver.findElement(passwordText).sendKeys(password);
+		//driver.findElement(passwordText).sendKeys(password);
+		sendKeysToElement(driver, passwordText, "SuperSecret");
 		//Actions action = new Actions(driver);		
 		//action.moveToElement(driver.findElement(signInButton)).sendKeys(Keys.TAB).perform();
 		
-		ReportUtils.log.info("Enter Password : *********");
+		ReportUtils.getLog().info("Enter Password : *********");
 	}
 	
 	public void clickSignIn() {
 		
-		driver.findElement(signInButton).click();
-		ReportUtils.log.info("Clicked on Sign In Link");
+		//driver.findElement(signInButton).click();
+		clickElement(driver, signInButton);						
+		ReportUtils.getLog().info("Clicked on Sign In Link");
 	}
 	
    
